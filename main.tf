@@ -1,7 +1,7 @@
 resource "aws_ec2_transit_gateway" "tgw" {
   description = "roboshop-tgw"
   tags = {
-    name = "roboshop-tgw-${var.ENV}"
+    Name = "roboshop-tgw-${var.ENV}"
   }
 }
 
@@ -12,6 +12,6 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tgw-attach" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw.id
   vpc_id             = var.DEFAULT_VPC_ID
   tags = {
-    name = "roboshop-tgw-attach-${var.ENV}"
+    Name = "roboshop-tgw-attach-${var.ENV}"
   }
 }
